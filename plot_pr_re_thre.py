@@ -12,6 +12,7 @@ def plot_coach(y_gold, y_prob):
     :param y_gold: 1D array of gold label
     :param y_prob: 1D array of predicted probability
     """
+    plt.figure()
     precision, recall, th = precision_recall_curve(y_gold, y_prob)
     plt.plot(th, precision[1:], label="Precision",linewidth=5)
     plt.plot(th, recall[1:], label="Recall",linewidth=5)
@@ -34,6 +35,7 @@ def plot_patient(y_gold, y_prob):
     :param y_gold: 1D array of gold label
     :param y_prob: 1D array of predicted probability
     """
+    plt.figure()
     y_gold = 1 - y_gold
     precision, recall, th = precision_recall_curve(y_gold, y_prob)
     plt.plot(th, precision[1:], label="Precision",linewidth=5)
