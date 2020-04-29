@@ -81,7 +81,7 @@ and **Baseline Score** will be shown, and precision/recall-threshould will be
 saved in pics folder as following figures.
 
 ![alt text](https://github.com/AllenTiTaiWang/Speaker_Classifier/blob/master/pics/plot_coach.png)
-![alt text](https://github.com/AllenTiTaiWang/Speaker_Classifier/blob/master/pics/plot participant.png)
+![alt text](https://github.com/AllenTiTaiWang/Speaker_Classifier/blob/master/pics/plot_participant.png)
 
 According to the figures, and precision is more important in this task. The 
 threshould is set 0.5 for being classified as a coach, and 0.1 for being 
