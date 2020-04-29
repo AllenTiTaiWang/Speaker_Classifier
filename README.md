@@ -2,6 +2,10 @@
 
 This classifier classifies speakers'utterance and adds SID to
 the title of all transcripts for all transcripts in TRS file.
+It will generate two folders (TRS_high_con and TRS_low_con)with
+tagged transcripts. The transcripts in TRS_low_con will still
+need to be manually check the tagging as it's predicted with low
+confident.
 
 This repo contains:
 
@@ -55,7 +59,9 @@ Specifically, we seperates the tagged model into TRS (train) and TRS_dev
 transcripts are put into TRS_test folder. Fidelity table is required as we
 need to know which SID matches which transcripts. Depending on whether their
 predicted probabiility passes the threshould (confident), the transcripts 
-are generated in different folders (TRS_high_con and TRS_low_con).
+are generated in different folders (TRS_high_con and TRS_low_con). Please
+manulaay check the transcripts in TRS_low_con as it's predicted with low
+confident.
 
 ![alt text](https://github.com/AllenTiTaiWang/Speaker_Classifier/blob/master/pics/flow_chart.png)
 
@@ -64,8 +70,9 @@ are generated in different folders (TRS_high_con and TRS_low_con).
 As mentioned above, the tagged and untagged transcripts should be put
 into the right folder, and then we can start the process. Firstly, put
 most of the tagged transcripts (at least 66% of all are recommended) in
-TRS folder as train set. Secondly, put the rest of the tagged transcripts
-in TRS_dev as development set. Finally, the untagged transcripts should be
+TRS folder as train set. Remember to delete the example file int it. 
+Secondly, put the rest of the tagged transcripts in TRS_dev as development 
+set. Finally, the untagged transcripts should be
 put in TRS_test.
 
 ### Run the script
@@ -78,7 +85,9 @@ python3 main.py
 
 **Threshould of Coach**, **Threshould of Participant**, **Prediction Score**,
 and **Baseline Score** will be shown, and precision/recall-threshould will be
-saved in pics folder as following figures.
+saved in pics folder as following figures. Also, the modified and tagged transcripts
+will be generated in TRS_high_con and TRS_low_con files. The transcripts inTRS_low_con
+file should be checked manually as it's predicted with lower confident.
 
 ![alt text](https://github.com/AllenTiTaiWang/Speaker_Classifier/blob/master/pics/plot_coach.png)
 ![alt text](https://github.com/AllenTiTaiWang/Speaker_Classifier/blob/master/pics/plot_participant.png)
